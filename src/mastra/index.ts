@@ -6,11 +6,14 @@ import { Observability, DefaultExporter, CloudExporter, SensitiveDataFilter } fr
 import { weatherWorkflow } from './workflows/weather-workflow';
 import { weatherAgent } from './agents/weather-agent';
 import { toolCallAppropriatenessScorer, completenessScorer, translationScorer } from './scorers/weather-scorer';
+import { recommendJobsAgent } from './agents/recommend-jobs/agent';
+import { searchJobsTool } from './tools/searchJobsTool';
 
 export const mastra = new Mastra({
   workflows: { weatherWorkflow },
-  agents: { weatherAgent },
+  agents: { weatherAgent, recommendJobsAgent },
   scorers: { toolCallAppropriatenessScorer, completenessScorer, translationScorer },
+  tools: { searchJobsTool },
   storage: new LibSQLStore({
     id: "mastra-storage",
     // stores observability, scores, ... into persistent file storage
