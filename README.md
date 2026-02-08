@@ -1,3 +1,45 @@
+# Build AI Agent With Mastra
+
+This repo contains a Mastra TypeScript project in `build-ai-agent/`.
+
+## Clone and run
+
+1. Clone the repo and enter it:
+
+```shell
+git clone <YOUR_REPO_URL>
+cd build-ai-agent-with-mastra
+```
+
+2. Install dependencies for the Mastra project:
+
+```shell
+cd build-ai-agent
+pnpm install
+```
+
+3. Set your OpenAI token (required for model calls):
+
+```shell
+export OPENAI_API_KEY="your-openai-api-key"
+```
+
+4. Start the development server:
+
+```shell
+pnpm run dev
+```
+
+5. Open Mastra Studio at `http://localhost:4111`.
+
+## Notes
+
+- Node.js `>=22.13.0` is required (see `build-ai-agent/package.json`).
+- If you use a `.env` file instead of `export`, define `OPENAI_API_KEY` there and load it with your shell or dotenv tooling.
+
+
+
+
 # build-ai-agent
 
 Welcome to your new [Mastra](https://mastra.ai/) project! We're excited to see what you'll build.
